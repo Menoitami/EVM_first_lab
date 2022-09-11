@@ -43,16 +43,17 @@ Type show_bits(Type num, digits_union bit){
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    cout << "Лабораторная работа Носкова Евгения.\nДля ввода типа данных используйте \"int\" или \"long double\" " << endl;
+    cout << "Lab Noskov Evgeny.\nTo enter the var type, use \"int\" or \"long double\" " << endl<<endl;
 
     digits_union number;
+    string answer;
+    string a;
 
 
     while (true) {
 
-        string answer;
-
         cout << "enter the type of var: ";
+
         getline(cin, answer);
 
         if (answer == "int") {
@@ -60,6 +61,8 @@ int main()
             cin >> number.int_num;
 
             show_bits(number.int_num, number);
+            getline(cin, answer);
+            continue;
         }
 
         if (answer == "long double") {
@@ -67,8 +70,12 @@ int main()
             cin >> number.double_num;
 
             show_bits(number.double_num, number);
+            getline(cin, answer);
+            continue;
         }
-        else cout << "u entered wrong argument. Try again " << endl;
+        
+        
+        cout << "u entered wrong argument. Try again "<< endl;
     }
 
 
